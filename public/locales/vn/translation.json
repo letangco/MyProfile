@@ -1,0 +1,14 @@
+{
+    "menu":{
+        "home": "TRANG CHỦ",
+        "aboutme":"BẢN THÂN",
+        "resume":"HỒ SƠ",
+        "portfolio":"DỰ ÁN",
+        "contactme":"LIÊN HỆ"
+    }
+    ,
+    "FirstCaption":{
+        "hello": "Xin chào, tôi tên là Lê Tăng Có",
+        "location":"Code là cuộc sống của tôi !!!"
+    }
+}

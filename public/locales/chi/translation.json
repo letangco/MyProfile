@@ -1,0 +1,14 @@
+{
+    "menu":{
+        "home": "主页",
+        "aboutme":"关于我",
+        "resume":"恢复",
+        "portfolio":"作品集",
+        "contactme":"联系"
+    }
+    ,
+    "FirstCaption":{
+        "hello": "嗨我是乐堂",
+        "location":"编码是我的生命！"
+    }
+}

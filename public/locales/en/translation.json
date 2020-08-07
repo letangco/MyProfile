@@ -1,0 +1,14 @@
+{
+    "menu":{
+        "home": "HOME",
+        "aboutme":"ABOUT ME",
+        "resume":"RESUME",
+        "portfolio":"PORTFOLIO",
+        "contactme":"CONTACT ME"
+    }
+    ,
+    "FirstCaption":{
+        "hello": "Hi, I am Le Tang Co",
+        "location":"Coding is my life !!!"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "menu":{
+        "home": "홈페이지",
+        "aboutme":"나에 대해서",
+        "resume":"이력서",
+        "portfolio":"포트폴리오",
+        "contactme":"접촉"
+    }
+    ,
+    "FirstCaption":{
+        "hello": "안녕하세요, 저는 Le Tang Co입니다",
+        "location":"코딩은 내 인생이다 !!!"
+    }
+}
