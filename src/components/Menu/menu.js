@@ -1,68 +1,72 @@
-import React, { Component } from 'react';
-import 'antd/dist/antd.css';
+import React from 'react';
 import './css/menu.css';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
-
-const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
-
-class Menu1 extends Component {
-  state = {
-    collapsed: false,
-  };
-
-  onCollapse = collapsed => {
-    console.log(collapsed);
-    this.setState({ collapsed });
-  };
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome,faUserTie, faBriefcase, faPuzzlePiece, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import anh1 from '../../image/coffee-apple.jpg';
+import avatar from '../../image/Circle_LTC_AVT.png';
+import { Nav, Navbar, Carousel } from 'react-bootstrap';
+class Menu extends React.Component {
+  
   render() {
     return (
-      <Layout style={{ minHeight: '100vh' }}>
-        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-          <div className="logo">Le Tang Co</div>
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1" icon={<PieChartOutlined />}>
-              Home
-            </Menu.Item>
-            <Menu.Item key="2" icon={<DesktopOutlined />}>
-              Abour
-            </Menu.Item>
-            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">Tom</Menu.Item>
-              <Menu.Item key="4">Bill</Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
-            </SubMenu>
-            <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
-            </SubMenu>
-            <Menu.Item key="9" icon={<FileOutlined />} />
-          </Menu>
-        </Sider>
-        <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }} />
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              Bill is a cat.
-            </div>
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-        </Layout>
-      </Layout>
+      <>
+        <Navbar expand="md" className="fixed-top">
+          <Navbar.Brand href="#home">LE TANG CO</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ml-auto">
+              <Nav.Link href="#home"><FontAwesomeIcon icon={faHome}/> HOME</Nav.Link>
+              <Nav.Link href="#about"><FontAwesomeIcon icon={faUserTie}/> ABOUT ME</Nav.Link>
+              <Nav.Link href="#resume"><FontAwesomeIcon icon={faBriefcase}/> RESUME</Nav.Link>
+              <Nav.Link href="#portfolio"><FontAwesomeIcon icon={faPuzzlePiece}/> PORTFOLIO</Nav.Link>
+              <Nav.Link href="#contact"><FontAwesomeIcon icon={faAddressCard}/> CONTACT ME</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={anh1}
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <img src={avatar} width="200vh"/>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={anh1}
+              alt="Second slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={anh1}
+              alt="Third slide"
+            />
+
+            <Carousel.Caption>
+              <h3>Third slide label</h3>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </>
     );
   }
 }
 
-export default Menu1;
+export default Menu;
