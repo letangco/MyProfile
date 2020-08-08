@@ -10,5 +10,8 @@
     "FirstCaption":{
         "hello": "Xin chào, tôi tên là Lê Tăng Có",
         "location":"Code là cuộc sống của tôi !!!"
+    },
+    "aboutPage":{
+        "title": "Đây là trang giới thiệu"
     }
 }

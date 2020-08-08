@@ -10,5 +10,8 @@
     "FirstCaption":{
         "hello": "안녕하세요, 저는 Le Tang Co입니다",
         "location":"코딩은 내 인생이다 !!!"
+    },
+    "aboutPage":{
+        "title": "정보 페이지입니다."
     }
 }

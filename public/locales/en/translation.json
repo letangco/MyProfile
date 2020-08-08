@@ -10,5 +10,8 @@
     "FirstCaption":{
         "hello": "Hi, I am Le Tang Co",
         "location":"Coding is my life !!!"
+    },
+    "aboutPage":{
+        "title": "This is the about page"
     }
 }

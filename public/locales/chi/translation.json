@@ -10,5 +10,8 @@
     "FirstCaption":{
         "hello": "嗨我是乐堂",
         "location":"编码是我的生命！"
+    },
+    "aboutPage":{
+        "title": "Đây là trang GIỚI THIỆU"
     }
 }
