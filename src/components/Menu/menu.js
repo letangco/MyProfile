@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './css/menu.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faUserTie, faBriefcase, faPuzzlePiece, faAddressCard } from '@fortawesome/free-solid-svg-icons';
@@ -12,29 +12,27 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-function Menu() {
-
+function Menu(props) {
+  const [lang, setLang] = useState('en');
   const { t, i18n } = useTranslation();
-  function handleChangeLanguageItem(lang) {
+  React.useEffect(() => {
     i18n.changeLanguage(lang);
+    console.log('Changed!');
+    return () => {
+      i18n.changeLanguage(lang);
+      console.log('unmount!');
+    };
+  }, [lang,i18n]); // giá trị mà đã được đồng ý thực thi
+  
+  function handleChangeSelect(event){
+    setLang(event.target.value);
+    i18n.changeLanguage(event.target.value)
   }
   return (
     <div>
       <Navbar expand="md" className="fixed-top">
         <Navbar.Brand href="#home">LE TANG CO</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Button variant="primary" size="sm" onClick={() => handleChangeLanguageItem('en')}>
-          English
-  </Button>
-        <Button variant="primary" size="sm" onClick={() => handleChangeLanguageItem('ko')}>
-          Korea
-  </Button>
-        <Button variant="primary" size="sm" onClick={() => handleChangeLanguageItem('chi')}>
-          China
-  </Button>
-        <Button variant="primary" size="sm" onClick={() => handleChangeLanguageItem('vn')}>
-          Viet Nam
-  </Button>
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -50,21 +48,19 @@ function Menu() {
           <InputLabel id="demo-simple-select-label">Choose your country...</InputLabel>
 
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value="en"
-            onChange={() => handleChangeLanguageItem('vn')}
+            value={lang}
+            onChange={handleChangeSelect}
           >
-            <MenuItem value="en" className="select-choose-country">
+            <MenuItem value="en">
               <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/gb.svg" alt="Flag" width="55px" height="40px" />&nbsp; English
                 </MenuItem>
-            <MenuItem value="chi" className="select-choose-country">
+            <MenuItem value="chi">
               <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/cn.svg" alt="Flag" width="55px" height="40px" />&nbsp; China
                 </MenuItem>
-            <MenuItem value="ko" className="select-choose-country">
+            <MenuItem value="ko">
               <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/kr.svg" alt="Flag" width="55px" height="40px" />&nbsp; Korea
                 </MenuItem>
-            <MenuItem value="vn" className="select-choose-country">
+            <MenuItem value="vn">
               <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/vn.svg" alt="Flag" width="55px" height="40px" />&nbsp; Viet Nam
                 </MenuItem>
           </Select>
